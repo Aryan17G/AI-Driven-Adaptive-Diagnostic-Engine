@@ -1,0 +1,30 @@
+AI-Driven Adaptive Diagnostic Engine
+
+Overview: This project is a backend system that performs adaptive
+testing using FastAPI, MongoDB, and OpenAI API. The system changes
+question difficulty based on student performance and calculates an
+ability score. After the test, AI generates a personalized study plan
+based on weak topics.
+
+Technologies Used: - Python - FastAPI - MongoDB - PyMongo - OpenAI API -
+python-dotenv - Uvicorn
+
+Project Structure: app/ main.py config.py database.py routes/ services/
+scripts/ seed.py
+
+Database: questions collection with difficulty, topic, answer sessions
+collection with ability and history
+
+Algorithm: Start ability = 0.5 Correct → ability increases Wrong →
+ability decreases Next question chosen based on ability
+
+API: POST /start-test GET /next-question/{session_id} POST
+/submit-answer GET /finish/{session_id}
+
+Run: pip install -r requirements.txt python scripts/seed.py uvicorn
+app.main:app –reload
+
+Open: http://127.0.0.1:8000/docs
+
+AI Usage: Used AI for architecture, adaptive logic, API design, and
+debugging.
